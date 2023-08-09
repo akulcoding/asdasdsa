@@ -37,9 +37,9 @@ sequelize.sync()
 
 // Routes for registering and logging in users
 app.post('/register', async (req, res) => {
-  const { username, password } = req.body;
+  const { rusername, rpassword } = req.body;
   try {
-    const user = await User.create({ username, password });
+    const user = await User.create({ rusername, rpassword });
     res.json(user);
   } catch (error) {
     res.status(500).json({ error: 'An error occurred while registering.' });
